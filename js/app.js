@@ -8,7 +8,9 @@ function bark(name, weight) {
 
 bark("rover", 23);
 bark("spike", 19);
-bark("max", 45);     
+bark("max", 45);  
+
+//functions   
 
 function bake(degrees) {
     var message;
@@ -25,9 +27,7 @@ function bake(degrees) {
     return message;
 }
 
-var status = bake(350);
-
-//new function
+var status = bake(350);  
 
 function clunk(times) {
     var num = times;
@@ -60,4 +60,3 @@ function display(output) {
 var clunkCounter = 0;
 thingamajig(5);
 console.log(clunkCounter);
-
