@@ -86,4 +86,26 @@ console.log("Highest bubble score: " + highScore);
 
 var bestSolutions = getBestResults(scores, highScore);
 console.log("Solutions with highest score: " + bestSolutions);
- 
+
+//Excercise
+var costs = [.25, .27, .25, .25, .25, .25, 
+             .33, .31, .25, .29, .27, .22,
+             .31, .25, .25, .33, .21, .25,
+             .25, .25, .30, .25, .24, .25,
+             .25, .25, .27, .25, .26, .29]
+
+ function GetMostCostEffectiveSolution(scores, costs, highScore) {
+    var cost = 100;
+    var index;
+    for(var i = 0; i < scores.length; i++) {
+        if (scores[i] == highScore) {
+            if (cost > costs[i]) {
+                index = i;
+                cost = costs[i];
+            }
+        }
+    }
+    return index;
+}
+var mostCostEffective = GetMostCostEffectiveSolution(scores, costs, highScore);
+console.log("bubble Solution #" + mostCostEffective + " is the most cost effective");
