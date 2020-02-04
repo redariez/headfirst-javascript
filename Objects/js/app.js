@@ -27,7 +27,7 @@
      console.log("You should really pass on the " + taxi.make + " " + taxi.model);
  }
 
- //Building Car selector
+ //Making a car
  function makeCar() {
      var makes = ["Chevy", "GM", "Fiat", "webville Motors", "Tucker"];
      var models = ["Cadillac", "500", "Bel-Air", "Taxi", "Torpedo"];
@@ -62,4 +62,18 @@
     displayCar(carToSell);
 
 
- 
+    //Adding behavior to our object
+    var fiat = {
+        makes = "Fiat", 
+        models = "500",
+        years = 1957,
+        colors =  "Medium Blue",
+        passengers = 2,
+        convertible = false,
+        mileage = 88000,
+        drive: function() {
+            alert("Zoom Zoom!");
+        }
+    }
+
+     
