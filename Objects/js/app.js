@@ -64,16 +64,145 @@
 
     //Adding behavior to our object
     var fiat = {
-        makes = "Fiat", 
-        models = "500",
-        years = 1957,
-        colors =  "Medium Blue",
-        passengers = 2,
-        convertible = false,
-        mileage = 88000,
-        drive: function() {
-            alert("Zoom Zoom!");
-        }
-    }
+        makes: "Fiat", 
+        models: "500",
+        years: 1957,
+        colors:  "Medium Blue",
+        passengers: 2,
+        convertible: false,
+        mileage: 88000,
+        started: false,
 
-     
+
+        start: function() {
+            this.started = true;
+        },
+
+        stop: function() {
+            this.started = false;
+        },
+
+        drive: function() { 
+            if (this.started) {
+                alert("zoom zoom!");
+            } else {
+                alert("You need to start the engine first.");
+            }
+        }
+    };
+
+    fiat.drive();
+    fiat.start();
+    fiat.drive();
+    fiat.stop();
+
+    fiat.started = true;
+
+    //Find the mistake  
+    var song = {
+        name: "Walk This Way",
+        artist: "Run-D.M.C",
+        minutes: 4,
+        seconds: 3,
+        genre: "80s",
+        playing: false,
+
+        play: function() {
+            if (!this.playing) {
+                this.playing = true;
+                console.log("Playing " + this.name + " by " + this.artist);
+            }
+        },
+        pause: function() {
+            if (this.playing) {
+                this.playing = false;
+            }
+        }
+    };
+
+    song.play();
+    song.pause();
+    
+
+    //adding drive method to car object
+    var cadi = {
+        make: "GM",
+        model: "Cadillac",
+        year: 1955,
+        color: "tan",
+        passengers: 5,
+        convertible: false,
+        mileage: 12892,
+
+        start: function() {
+            this.started = true;
+        },
+
+        stop: function() {
+            this.started = false;
+        },
+
+        drive: function() { 
+            if (this.started) {
+                alert(this.color + " " + this.make + " " + this.model + " goes zoom zoom");
+            } else {
+                alert("You need to start the engine first pimp.");
+            }
+        }
+    };
+
+    cadi.drive();
+    cadi.start();
+    cadi.drive();
+    cadi.stop();
+
+    //Adding state to the behavior
+
+    var fiat = {
+        make: "Fiat", 
+        model: "500",
+        years: 1957,
+        colors:  "Medium Blue",
+        passengers: 2,
+        convertible: false,
+        mileage: 88000,
+        started: false,
+        fuel: 0,
+
+
+        start: function() {
+            this.started = true;
+        },
+
+        stop: function() {
+            this.started = false;
+        },
+
+        drive: function() { 
+            if (this.started) {
+                if (this.fuel > 0) {
+                alert(this.make + " " + this.model + " goes zoom zoom!");
+                this.fuel = this.fuel -1;
+            } else {
+                alert("Out of fuel.");
+                this.stop();
+            }
+        } else {
+            alert("You need to start the engine first");
+             }
+        },
+        addFuel: function(amount) {
+            this.fuel = this.fuel + amount;
+        }
+    };
+
+    fiat.start();
+    fiat.drive();
+    fiat.addFuel(2);
+    fiat.start();
+    fiat.drive();
+    fiat.drive();
+    fiat.drive();
+    fiat.stop();
+
+    fiat.started = true;
